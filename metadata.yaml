@@ -1,0 +1,6 @@
+homepage: "https://github.com/oleg-dirtrider"
+versions:
+  # Latest version
+  - sha: d8c5c6707830aa3c43a85333c1c3f542d34e1e67
+    changeNotes: Initial release
+  # Older version
