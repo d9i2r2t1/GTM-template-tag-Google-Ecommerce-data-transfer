@@ -30,7 +30,7 @@ ___TEMPLATE_PARAMETERS___
 
 [
   {
-    "displayName": "<b>WARNING:</b> This tag uses Google Enhanced Ecommerce configured via dataLayer to get event and product data, so you need it to be on your site, otherwise this tag will not work.<br>\n<b>IMPORTANT:</b> This tag intercepts dataLayer.push, so it should be fired only via <b>All Pages</b> or <b>DOM Ready</b> triggers.",
+    "displayName": "<b>WARNING:</b> This tag uses Google Enhanced Ecommerce configured via dataLayer to get event and product data, so you need it to be on your site, otherwise this tag will not work.<br>\n<b>IMPORTANT:</b> This tag intercepts dataLayer.push, so it should be fired only via <b>All Pages</b> or <b>DOM Ready</b> triggers.<br>",
     "name": "Info",
     "type": "LABEL"
   },
@@ -654,50 +654,11 @@ ___WEB_PERMISSIONS___
                 "mapValue": [
                   {
                     "type": 1,
-                    "string": "gaEcomTransfer.settings"
+                    "string": "gaEcomTransfer"
                   },
                   {
                     "type": 8,
                     "boolean": true
-                  },
-                  {
-                    "type": 8,
-                    "boolean": true
-                  },
-                  {
-                    "type": 8,
-                    "boolean": false
-                  }
-                ]
-              },
-              {
-                "type": 3,
-                "mapKey": [
-                  {
-                    "type": 1,
-                    "string": "key"
-                  },
-                  {
-                    "type": 1,
-                    "string": "read"
-                  },
-                  {
-                    "type": 1,
-                    "string": "write"
-                  },
-                  {
-                    "type": 1,
-                    "string": "execute"
-                  }
-                ],
-                "mapValue": [
-                  {
-                    "type": 1,
-                    "string": "gaEcomTransfer.start"
-                  },
-                  {
-                    "type": 8,
-                    "boolean": false
                   },
                   {
                     "type": 8,
@@ -751,7 +712,7 @@ ___WEB_PERMISSIONS___
 ___SANDBOXED_JS_FOR_WEB_TEMPLATE___
 
 //API
-const setInWindow = require('setInWindow');
+const copyFromWindow = require('copyFromWindow');
 const injectScript = require('injectScript');
 const callInWindow = require('callInWindow');
 const makeTableMap = require('makeTableMap');
@@ -792,7 +753,7 @@ const settings = {
         catalog: data.pageTypeGTMcatalogPage
     },
     pageTypeGTM: data.pageTypeGTMvalue,
-
+    useGTMvarPageType: data.pageTypeGTM,
     siteSearchPage: data.pageTypeGTM ? data.pageTypeGTMsiteSearchPage : data.pageTypeSiteSearchPage,
     siteSearchQueryParam: data.siteSearchQueryParam,
     mainPage: data.pageTypeMainPage,
@@ -803,12 +764,16 @@ const settings = {
 
 //InjectScript callback function
 const run = () => {
-    setInWindow('gaEcomTransfer.settings', settings);
-    callInWindow('gaEcomTransfer.start');
+    callInWindow('gaEcomTransfer', settings);
 };
 
 //Start
-injectScript('https://oleg-dirtrider.github.io/ga_enhanced_ecom_data_transfer_to_remarketing_pixels.js', run, data.gtmOnFailure, 'gaEcomTransfer');
+if (!copyFromWindow('gaEcomTransfer')) {
+    injectScript('https://oleg-dirtrider.github.io/ga_enhanced_ecom_data_transfer_to_remarketing_pixels.js', run, data.gtmOnFailure, 'gaEcomTransfer');
+}
+else {
+    run();
+}
 data.gtmOnSuccess();
 
 
