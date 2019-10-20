@@ -9,8 +9,8 @@ Google may provide), as modified from time to time.
 ___INFO___
 
 {
-  "displayName": "GA Ecommerce data transfer to remarketing pixels",
-  "description": "Custom Template that gets data from GA Enhanced Ecommerce and sends it to dynamic remarketing pixels.\n\nDeveloper: github.com/oleg-dirtrider",
+  "displayName": "GA Enhanced Ecommerce data transfer to remarketing pixels",
+  "description": "This tag gets data from GA Enhanced Ecommerce configured via dataLayer and sends it to dynamic remarketing pixels: VK, Facebook, myTarget. Developer: github.com/oleg-dirtrider",
   "securityGroups": [],
   "id": "cvt_temp_public_id",
   "type": "TAG",
