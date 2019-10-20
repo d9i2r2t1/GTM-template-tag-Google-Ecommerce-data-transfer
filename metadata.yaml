@@ -1,9 +1,11 @@
 homepage: "https://github.com/oleg-dirtrider"
 versions:
   # Latest version
+  - sha: 5a6034938cfc4647944bd93155fea9a720b14370
+    changeNotes: Rename template
+  # Older version
   - sha: cd54c7e130f537f512ddd356791c5a35a6a79a1b
     changeNotes: Template's description update
-  # Older version
   - sha: 6571052f23df843058bfaf20211fb4c1a73e41ee
     changeNotes: Interface update
   - sha: d8c5c6707830aa3c43a85333c1c3f542d34e1e67
