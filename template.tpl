@@ -10,6 +10,7 @@ ___INFO___
 
 {
   "displayName": "Google Enhanced Ecommerce data transfer to remarketing pixels",
+  "categories": ["REMARKETING", "MARKETING", "CONVERSIONS"],
   "description": "This tag gets data from Google Enhanced Ecommerce configured via dataLayer and sends it to dynamic remarketing pixels: VK, Facebook, myTarget. Developer: github.com/oleg-dirtrider",
   "securityGroups": [],
   "id": "cvt_temp_public_id",
