@@ -2,9 +2,11 @@ homepage: "https://github.com/oleg-dirtrider"
 documentation: "https://github.com/oleg-dirtrider/gtm_template_ga_ecommerce_data_transfer_to_remarketing_pixels/blob/master/README.md"
 versions:
   # Latest version
+  - sha: e1367fdb5c3fa36364631f84725fa65931bef2e6
+    changeNotes: Template rename
+  # Older version
   - sha: bd72b3a18469606b0afbc730dad0d5934231cd4b
     changeNotes: Add categories to template.tpl
-  # Older version
   - sha: 5a6034938cfc4647944bd93155fea9a720b14370
     changeNotes: Rename template
   - sha: cd54c7e130f537f512ddd356791c5a35a6a79a1b
