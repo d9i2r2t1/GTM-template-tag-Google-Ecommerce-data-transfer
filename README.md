@@ -12,7 +12,10 @@ This tag intercepts dataLayer.push, so it should be fired only via **All Pages**
 
 You can run several copies of the tag on the page, for example, one for VK, the second for Facebook, etc.
 
-The tag injects [this script](https://github.com/oleg-dirtrider/oleg-dirtrider.github.io/blob/master/ga_enhanced_ecom_data_transfer_to_remarketing_pixels.js) to the site for its work.  
+The tag injects [this script](https://github.com/oleg-dirtrider/oleg-dirtrider.github.io/blob/master/ga_enhanced_ecom_data_transfer_to_remarketing_pixels.js) to the site for its work.
+
+If your security policy does not allow loading third-party scripts, you can install this data transfer script as a [GTM Custom HTML tag](https://github.com/oleg-dirtrider/gtm_tag_ga_ecommerce_data_transfer_to_remarketing_pixels/blob/master/gtm_tag_google_ecommerce_data_transfer.js). In this case, no third-party scripts will be loaded to your site. To do this, fill the settings object in the code with your data and set All Pages trigger for this GTM Custom HTML tag.
+
 
 ## Events and event data structure
 
