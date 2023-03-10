@@ -11,7 +11,7 @@ ___INFO___
 {
   "displayName": "Google Ecommerce data transfer",
   "categories": ["REMARKETING", "MARKETING", "CONVERSIONS"],
-  "description": "This tag gets data from Google Enhanced Ecommerce configured via dataLayer and sends it to dynamic remarketing pixels: VK, Facebook, myTarget. Developer: github.com/oleg-dirtrider",
+  "description": "This tag gets data from Google Enhanced Ecommerce configured via dataLayer and sends it to dynamic remarketing pixels: VK, Facebook, myTarget. Developer: github.com/d9i2r2t1",
   "securityGroups": [],
   "id": "cvt_temp_public_id",
   "type": "TAG",
@@ -695,7 +695,7 @@ ___WEB_PERMISSIONS___
             "listItem": [
               {
                 "type": 1,
-                "string": "https://oleg-dirtrider.github.io/ga_enhanced_ecom_data_transfer_to_remarketing_pixels.js"
+                "string": "https://d9i2r2t1.github.io/ga_enhanced_ecom_data_transfer_to_remarketing_pixels.js"
               }
             ]
           }
@@ -770,7 +770,7 @@ const run = () => {
 
 //Start
 if (!copyFromWindow('gaEcomTransfer')) {
-    injectScript('https://oleg-dirtrider.github.io/ga_enhanced_ecom_data_transfer_to_remarketing_pixels.js', run, data.gtmOnFailure, 'gaEcomTransfer');
+    injectScript('https://d9i2r2t1.github.io/ga_enhanced_ecom_data_transfer_to_remarketing_pixels.js', run, data.gtmOnFailure, 'gaEcomTransfer');
 }
 else {
     run();
